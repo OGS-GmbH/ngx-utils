@@ -1,0 +1,66 @@
+// See for more details: https://www.typescriptlang.org/tsconfig
+{
+	// Compiler Options
+	// See for more details: https://www.typescriptlang.org/tsconfig#compiler-options
+	"compilerOptions": {
+		// Type checking
+		// See for more details: https://www.typescriptlang.org/tsconfig#Type_Checking_6248
+		"alwaysStrict": true,
+		"strict": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"useUnknownInCatchVariables": true,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+
+		// Modules
+		// See for more details: https://www.typescriptlang.org/tsconfig#Modules_6244
+		"moduleResolution": "bundler",
+		"module": "ES2022",
+
+		// Emit
+		// See for more details: https://www.typescriptlang.org/tsconfig#Emit_6246
+		"importHelpers": true,
+		"noEmitHelpers": false,
+		"declaration": true, // NOTE: Only for packages
+
+		// Editor Support
+		// See for more details: https://www.typescriptlang.org/tsconfig#Editor_Support_6249
+		"disableSizeLimit": false, // Can be updated anytime the responsible error occurs
+
+		// Interop Constraints
+		// See for more details: https://www.typescriptlang.org/tsconfig#Interop_Constraints_6252
+		"esModuleInterop": true,
+		"isolatedModules": true,
+
+		// Language and Environment
+		// See for more details: https://www.typescriptlang.org/tsconfig#Language_and_Environment_6254
+		"experimentalDecorators": true,
+		"lib": [
+			"ES2022",
+			"dom"
+		],
+		"target": "ES2022",
+
+		// Completeness
+		// See for more details: https://www.typescriptlang.org/tsconfig#Completeness_6257
+		"skipLibCheck": true
+	},
+	// Angular Compiler Options
+	// See for more details: https://angular.io/guide/angular-compiler-options
+	"angularCompilerOptions": {
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": true,
+		"compilationMode": "partial" // NOTE: Only for packages
+	}
+}

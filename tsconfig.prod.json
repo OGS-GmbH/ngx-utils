@@ -1,0 +1,25 @@
+// This tsconfig is used for the library in production environment.
+// See for more details: https://www.typescriptlang.org/tsconfig
+{
+	// Root Fields
+	// See for more details: https://www.typescriptlang.org/tsconfig#root-fields
+	"files": [
+		"src/public-api.ts"
+	],
+	"include": [
+		"src/**/*.d.ts"
+	],
+
+	// Extends
+	// See for more details: https://www.typescriptlang.org/tsconfig#extends
+	"extends": "./tsconfig.json",
+
+	// Compiler Options
+	// See for more details: https://www.typescriptlang.org/tsconfig#compiler-options
+	"compilerOptions": {
+		// Emit
+		// See for more details: https://www.typescriptlang.org/tsconfig#Emit_6246
+		"outDir": "./dist/prod",
+		"removeComments": true
+	}
+}

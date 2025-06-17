@@ -1,0 +1,3 @@
+pnpm run lint:ci:tsc
+pnpm run lint:ci:eslint
+pnpm run lint:ci:stylint
