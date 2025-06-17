@@ -1,29 +1,29 @@
 {
 	"name": "@ogs-gmbh/ngx-utils",
-	"version": "0.0.0",
-  "description": "A lightweight collection of utility functions and helpers for Angular applications",
-  "keywords": [
-    "angular",
-    "utils",
-    "utility-functions",
-    "helpers",
-    "angular-utils",
-    "typescript",
-    "shared-code",
-    "code-reuse",
-    "toolkit"
-  ],
-  "homepage": "https://github.com/OGS-GmbH/ngx-utils",
-  "bugs": "https://github.com/OGS-GmbH/ngx-utils/issues",
-  "license": "MIT",
+	"version": "1.0.0",
+	"description": "A lightweight collection of utility functions and helpers for Angular applications",
+	"keywords": [
+		"angular",
+		"utils",
+		"utility-functions",
+		"helpers",
+		"angular-utils",
+		"typescript",
+		"shared-code",
+		"code-reuse",
+		"toolkit"
+	],
+	"homepage": "https://github.com/OGS-GmbH/ngx-utils",
+	"bugs": "https://github.com/OGS-GmbH/ngx-utils/issues",
+	"license": "MIT",
 	"author": "OGS GmbH",
-  "contributors": [
-    {
-      "name": "Simon Kovtyk",
-      "email": "simon@kovtyk.com",
-      "url": "https://simonkov.dev"
-    }
-  ],
+	"contributors": [
+		{
+			"name": "Simon Kovtyk",
+			"email": "simon@kovtyk.com",
+			"url": "https://simonkov.dev"
+		}
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+http://ogs-hq-git.ogs.local/standard/shared/npm/ngx-utils.git"
@@ -79,7 +79,7 @@
 		"rxjs": "~7.8.0",
 		"zone.js": "^0.14.10"
 	},
-  "sideEffects": false,
+	"sideEffects": false,
 	"publishConfig": {
 		"registry": "http://ogs-hq-nexus.ogs.local:8081/repository/npm-angular/",
 		"directory": "dist/prod"
