@@ -1,9 +1,8 @@
 {
 	"name": "@ogs/ngx-utils",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"author": "Simon Kovtyk",
-	"scripts": {
-	},
+	"scripts": {},
 	"publishConfig": {
 		"registry": "http://ogs-hq-nexus.ogs.local:8081/repository/npm-angular/",
 		"directory": "dist/prod"
