@@ -1,28 +1,13 @@
-// This tsconfig is used for the library in test environment.
-// See for more details: https://www.typescriptlang.org/tsconfig
 {
-	// Root Fields
-	// See for more details: https://www.typescriptlang.org/tsconfig#root-fields
 	"include": [
 		"src/**/*.spec.ts",
 		"src/**/*.d.ts"
 	],
-
-	// Extends
-	// See for more details: https://www.typescriptlang.org/tsconfig#extends
 	"extends": "./tsconfig.prod.json",
-
-	// Compiler Options
-	// See for more details: https://www.typescriptlang.org/tsconfig#compiler-options
 	"compilerOptions": {
-		// Modules
-		// See for more details: https://www.typescriptlang.org/tsconfig#Modules_6244
 		"types": [
 			"jasmine"
 		],
-
-		// Emit
-		// See for more details: https://www.typescriptlang.org/tsconfig#Emit_6246
 		"outDir": "./dist/spec"
 	}
 }
