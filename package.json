@@ -1,6 +1,6 @@
 {
 	"name": "@ogs-gmbh/ngx-utils",
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"description": "A lightweight collection of utility functions and helpers for Angular applications",
 	"keywords": [
 		"angular",
@@ -13,7 +13,7 @@
 		"code-reuse",
 		"toolkit"
 	],
-	"homepage": "https://github.com/OGS-GmbH/ngx-utils",
+	"homepage": "https://github.com/OGS-GmbH/ngx-utils?tab=readme-ov-file",
 	"bugs": "https://github.com/OGS-GmbH/ngx-utils/issues",
 	"license": "MIT",
 	"author": "OGS GmbH",
@@ -26,7 +26,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+http://ogs-hq-git.ogs.local/standard/shared/npm/ngx-utils.git"
+		"url": "https://github.com/OGS-GmbH/ngx-utils"
 	},
 	"scripts": {
 		"ci:build:main:production": "ng build --configuration production",
