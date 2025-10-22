@@ -1,6 +1,7 @@
 export namespace KeyboardKeys {
   export const BACKSPACE: string = "Backspace";
   export const ENTER: string = "Enter";
+		export const ESCAPE: string = "Escape";
   export const COMMA: string = ",";
   export const PERIOD: string = ".";
   export const COLON: string = ":";
