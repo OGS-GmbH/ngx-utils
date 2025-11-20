@@ -31,6 +31,18 @@ export default defineConfig(
     }
   },
   {
+    ignores: [
+      ".angular",
+      ".git",
+      ".husky",
+      ".idea",
+      "node_modules",
+      "dist",
+      "README.md",
+      "CHANGELOG.md"
+    ]
+  },
+  {
     files: [ "**/*.ts" ],
     processor: angular.processInlineTemplates,
     languageOptions: {
