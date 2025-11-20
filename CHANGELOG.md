@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/OGS-GmbH/ngx-utils/compare/v1.1.0...v1.2.0) (2025-11-20)
+
+
+### Features
+
+* add text-clamp-directive ([#9](https://github.com/OGS-GmbH/ngx-utils/issues/9)) ([32123e3](https://github.com/OGS-GmbH/ngx-utils/commit/32123e3b47b5350a0af9a0591b0cc818f1799f1d))
+* add throttle-click-directive ([9a86b8d](https://github.com/OGS-GmbH/ngx-utils/commit/9a86b8d74c5187e91fb24f2bbdd2843dc98a69e2))
+
 ## [1.1.0](https://github.com/OGS-GmbH/ngx-utils/compare/v1.0.0...v1.1.0) (2025-10-22)
 
 
