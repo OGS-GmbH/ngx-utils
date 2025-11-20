@@ -29,7 +29,9 @@
 			"dom"
 		],
 		"target": "ES2022",
-		"skipLibCheck": true
+		"skipLibCheck": true,
+    "sourceMap": true,
+		"declarationMap": true
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,

@@ -1,8 +1,9 @@
 import {
+  ANGULAR_TEMPLATE_RULES_PRESET,
   ESLINT_JSON_RULES,
   ESLINT_MARKDOWN_RULES,
   JS_RULES_PRESET,
-  TS_RULES_PRESET
+  getAngularTsPreset
 } from "@ogs-gmbh/linter";
 import eslintJson from "@eslint/json";
 import eslintMarkdown from "@eslint/markdown";
@@ -11,9 +12,11 @@ import stylisticJs from "@stylistic/eslint-plugin-js";
 import stylisticPlus from "@stylistic/eslint-plugin-plus";
 import stylisticTs from "@stylistic/eslint-plugin-ts";
 import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 import unicorn from "eslint-plugin-unicorn";
+import angular from "angular-eslint";
 
-export default tseslint.config(
+export default defineConfig(
   {
     plugins: {
       "@tseslint": tseslint.plugin,
@@ -22,32 +25,32 @@ export default tseslint.config(
       "@stylistic/ts": stylisticTs,
       "@stylistic/plus": stylisticPlus,
       "@markdown": eslintMarkdown,
-      "@json": eslintJson
+      "@json": eslintJson,
+      "@angular": angular.tsPlugin,
+      "@angular-template": angular.templatePlugin
     }
   },
   {
-    ignores: [
-      ".angular",
-      ".git",
-      ".husky",
-      ".idea",
-      "node_modules",
-      "dist",
-      "README.md",
-      "CHANGELOG.md"
-    ]
-  },
-  {
     files: [ "**/*.ts" ],
+    processor: angular.processInlineTemplates,
     languageOptions: {
       parser: tseslint.parser,
-      globals: globals.browser,
+      globals: { ...globals.browser },
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname
       }
     },
-    rules: TS_RULES_PRESET
+    rules: getAngularTsPreset({
+      selectorPrefix: "app"
+    })
+  },
+  {
+    files: [ "**/*.html" ],
+    languageOptions: {
+      parser: angular.templateParser
+    },
+    rules: ANGULAR_TEMPLATE_RULES_PRESET
   },
   {
     files: [ "**/*.js", "**/*.mjs", "**/*.cjs" ],
