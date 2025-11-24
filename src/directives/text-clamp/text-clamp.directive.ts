@@ -3,8 +3,6 @@ import { AfterViewInit, computed, Directive, ElementRef, inject, input, InputSig
 import { toObservable } from '@angular/core/rxjs-interop';
 import { animationFrameScheduler, debounceTime, filter, fromEvent, merge, Observable, throttleTime } from 'rxjs';
 import { CanvasMeasurerService } from './services/canvas-measurer-service.service';
-import { DomSanitizer } from '@angular/platform-browser';
-
 
 /**
  * Rounds a number up only if its fractional part is at or above the given threshold.
@@ -89,8 +87,6 @@ export class TextClampDirective implements AfterViewInit {
   private _isTextInitialized: boolean = false;
 
   private readonly _renderer: Renderer2 = inject(Renderer2);
-
-  private readonly _sanitizer: DomSanitizer = inject(DomSanitizer);
 
   private _htmlElement: ElementRef<HTMLElement> | undefined = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>);
 
