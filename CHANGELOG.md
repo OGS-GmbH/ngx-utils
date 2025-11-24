@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/OGS-GmbH/ngx-utils/compare/v1.2.0...v1.3.0) (2025-11-24)
+
+
+### Features
+
+* add type for mapping to angular form ([2fbbb3f](https://github.com/OGS-GmbH/ngx-utils/commit/2fbbb3fdb5f2d75507c768f55d096bca6b9dac2c))
+
 ## [1.2.0](https://github.com/OGS-GmbH/ngx-utils/compare/v1.1.0...v1.2.0) (2025-11-20)
 
 
