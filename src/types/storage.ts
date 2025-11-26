@@ -2,7 +2,10 @@
  * Static storage helper methods
  *
  */
-/* eslint-disable-next-line @tseslint/no-extraneous-class */
+
+
+/** TODO: Take out of types as it is not a type */
+// eslint-disable-next-line @tseslint/no-extraneous-class
 export class StorageUtil {
   /**
    * Generate random UUID

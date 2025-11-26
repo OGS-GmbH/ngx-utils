@@ -1,7 +1,10 @@
 /**
  * Static timestamp helper functions
  */
-/* eslint-disable-next-line @tseslint/no-extraneous-class */
+
+
+/** TODO: Take out of types as it is not a type */
+// eslint-disable-next-line @tseslint/no-extraneous-class
 export class TimestampUtil {
   /**
    * Validate timestamp by its value against current timestamp

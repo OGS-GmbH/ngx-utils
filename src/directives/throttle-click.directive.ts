@@ -54,6 +54,11 @@ export class ThrottleClickDirective {
   @Output() public readonly throttleClick: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
 
   constructor () {
+    /**
+     * TODO: throttleTimeMs is set in the consturctor which runs only once when the directive is instantiated. At that point, the input binding hasn't been set yet, so it gets the default value (800)
+     * Solution =>  set up the RxJS pipeline in a lifecycle hook or use an effect
+     *
+     */
     fromEvent<MouseEvent>(this._element.nativeElement, "click")
       .pipe(
         throttleTime(this.throttleTimeMs(), undefined, {
