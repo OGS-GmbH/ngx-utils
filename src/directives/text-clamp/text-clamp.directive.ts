@@ -10,6 +10,9 @@ import { CanvasMeasurerService } from './services/canvas-measurer-service.servic
  * @param value - The value to round.
  * @param threshold - The fractional cutoff (0–1) above which to round up.
  * @returns The rounded integer.
+ *
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
 function roundWithThreshold (value: number, threshold: number): number {
   const integerPart: number = Math.floor(value);
@@ -30,6 +33,9 @@ function roundWithThreshold (value: number, threshold: number): number {
  * @param maxLines - Total number of allowed lines.
  * @param ellipsisWidth - Pixel width of the ellipsis string.
  * @returns True if the word can fit, false otherwise.
+ *
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
 // eslint-disable-next-line @tseslint/max-params
 function fits (
@@ -77,6 +83,8 @@ function fits (
  *   }
  * }
  * ```
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
 
 @Directive({
@@ -94,12 +102,24 @@ export class TextClampDirective implements AfterViewInit {
     if (this._htmlElement?.nativeElement)
       return this._htmlElement.nativeElement;
 
-
     return undefined;
   }
 
+  /**
+   * The text value for this input.
+   *
+   * @remarks
+   * This property is required. Accepts a string or `undefined`.
+   */
   public text: InputSignal<string | undefined> = input.required();
 
+  /**
+   * The string used as an ellipsis.
+   *
+   * @remarks
+   * This value can be customized to control how truncated text is indicated.
+   * @defaultValue "..."
+   */
   public ellipsis: InputSignal<string> = input("...");
 
   private _textChange$: Observable<string | undefined> = toObservable(this.text);

@@ -31,6 +31,8 @@ import { fromEvent, throttleTime } from 'rxjs';
  *   }
  * }
  * ```
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
 @Directive({
   selector: '[throttleClick]',
@@ -41,14 +43,24 @@ export class ThrottleClickDirective {
 
   /**
    * Whether the first click is emitted - default is true
+   * @remarks
+   * @defaultValue true
    */
   public leading: InputSignal<boolean> = input(true);
 
   /**
    * Whether the last click is emitted - default is true
+   * @remarks
+   * @defaultValue true
    */
   public trailing: InputSignal<boolean> = input(true);
 
+  /**
+   * Duration of the throttle period in milliseconds.
+   * @remarks
+   * This value configures the timing used by the directive's throttling mechanism
+   * @defaultValue 800
+   */
   public throttleTimeMs: InputSignal<number> = input(800);
 
   @Output() public readonly throttleClick: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();

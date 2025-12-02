@@ -1,5 +1,9 @@
 /**
  * Static timestamp helper functions
+ * @class
+ *
+ * @since 1.0.0
+ * @author Simon Kovtyk
  */
 /* eslint-disable-next-line @tseslint/no-extraneous-class */
 export class TimestampUtil {

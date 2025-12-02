@@ -1,3 +1,9 @@
+/**
+ * Keyboard Keys
+ * @readonly
+ * @since 1.0.0
+ * @author Simon Kovtyk
+ */
 export namespace KeyboardKeys {
   export const BACKSPACE: string = "Backspace";
   export const ENTER: string = "Enter";
@@ -72,6 +78,13 @@ export namespace KeyboardKeys {
   export const UPPER_Y: string = "Y";
   export const UPPER_Z: string = "Z";
 }
+/**
+ * Keyboard Digits and Letters
+ * @namespace
+ * @readonly
+ * @since 1.0.0
+ * @author Simon Kovtyk
+ */
 export namespace KeyboardKeyArrays {
   export const DIGITS: string[] = [ KeyboardKeys.DIGIT_0,
     KeyboardKeys.DIGIT_1,
