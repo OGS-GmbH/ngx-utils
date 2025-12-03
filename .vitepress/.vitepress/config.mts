@@ -25,7 +25,9 @@ export default defineConfig({
       {
         text: "Guide",
         items: [
-          { text: "Getting started", link: "/guide/" }
+          { text: "Getting started", link: "/guide/" },
+          { text: "Keyboard", link: "/guide/keyboard/" },
+          { text: "Forms", link: "/guide/forms/" }
         ]
       },
       {
