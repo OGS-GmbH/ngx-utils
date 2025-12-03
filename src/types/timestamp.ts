@@ -1,6 +1,6 @@
 /**
  * Static timestamp helper functions
- * @class
+ * @category Utilities
  *
  * @since 1.0.0
  * @author Simon Kovtyk

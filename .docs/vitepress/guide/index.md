@@ -5,33 +5,31 @@
 ### Prerequisites
 
 - Node.js version 18 or higher.
-- One of many of the supported linters
 - A package manager: e.g. npm, pnpm, ...
+- To get started, you can install this package using your preferred package manager.
 
 ::: code-group
 
 ```sh [npm]
-$ npm add -D @ogs-gmbh/linter
+$ npm install -D @ogs-gmbh/ngx-utils
 ```
 
 ```sh [pnpm]
-$ pnpm add -D @ogs-gmbh/linter
+$ pnpm install -D @ogs-gmbh/ngx-utils
 ```
 
 ```sh [yarn]
-$ yarn add -D @ogs-gmbh/linter
+$ yarn install -D @ogs-gmbh/ngx-utils
 ```
 
 ```sh [bun]
-$ bun add -D @ogs-gmbh/linter
+$ bun install -D @ogs-gmbh/ngx-utils
 ```
 
 :::
 
-The linter gets configured after the command has been run successfully.
+This repository provides a lightweight collection of utility functions and helpers for Angular applications. Designed to simplify common tasks such as type checking, formatting, data manipulation, and reactive programming patterns, this library helps improve code readability, reusability, and maintainability across projects.
 
 ### Configure
 
-Each preset requires a given set of dependencies to supply rules to their linter, before getting it to work.
-
-Check out our setup guides. They provide step-by-step instructions on how to configure each linter for specific tasks.
+The utilities are written in TypeScript and work seamlessly with Angular’s standard tooling. After installation, ensure your project uses a modern TypeScript configuration, then import the functions you need directly from the package. No additional Angular-specific configuration is required.

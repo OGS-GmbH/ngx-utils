@@ -5,6 +5,7 @@ import { fromEvent, throttleTime } from 'rxjs';
 /**
  * Throttles click events on an HTML element.
  *
+ * @category Directives
  * @remarks
  * Prevents rapid repeated clicks by allowing only one `(throttleClick)` event
  * to fire within the configured interval. Works with any clickable element.

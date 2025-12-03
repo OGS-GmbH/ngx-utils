@@ -1,6 +1,6 @@
 /**
  * Static storage helper methods
- * @class
+ * @category Utilities
  *
  * @since 1.0.0
  * @author Simon Kovtyk

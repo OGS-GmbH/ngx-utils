@@ -7,6 +7,7 @@ import { CanvasMeasurerService } from './services/canvas-measurer-service.servic
 /**
  * Rounds a number up only if its fractional part is at or above the given threshold.
  *
+ * @function
  * @param value - The value to round.
  * @param threshold - The fractional cutoff (0–1) above which to round up.
  * @returns The rounded integer.
@@ -27,6 +28,7 @@ function roundWithThreshold (value: number, threshold: number): number {
  * Determines whether a word of a given width fits into the remaining line width,
  * taking into account the ellipsis width on the last line.
  *
+ * @function
  * @param wordWidth - Pixel width of the current word.
  * @param remainingWidth - Remaining pixel width in the current line.
  * @param currentLine - 1-based index of the current line.
@@ -55,6 +57,7 @@ function fits (
 /**
  * Clamps text to its available space and appends a custom ellipsis.
  *
+ * @category Directives
  * @remarks
  * Limits content automatically to the available size of the parent container.
  * Takes Line height into account as well as preserving whole words.
