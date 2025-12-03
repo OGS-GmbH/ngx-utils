@@ -1,4 +1,4 @@
-import Theme from 'vitepress/theme'
-import 'virtual:group-icons.css'
+import "virtual:group-icons.css";
 
-export default Theme
+/* eslint-disable-next-line no-restricted-exports */
+export { default } from "vitepress/theme";
