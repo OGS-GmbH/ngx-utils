@@ -38,6 +38,7 @@ export default defineConfig(
       ".idea",
       "node_modules",
       "dist",
+      ".vitepress",
       "README.md",
       "CHANGELOG.md"
     ]
