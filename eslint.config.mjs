@@ -40,7 +40,8 @@ export default defineConfig(
       "dist",
       ".vitepress",
       "README.md",
-      "CHANGELOG.md"
+      "CHANGELOG.md",
+      ".vitepress/.vitepress/cache"
     ]
   },
   {
@@ -50,7 +51,12 @@ export default defineConfig(
       parser: tseslint.parser,
       globals: { ...globals.browser },
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: [
+            ".vitepress/.vitepress/*",
+            ".vitepress/.vitepress/theme/*"
+          ]
+        },
         tsconfigRootDir: import.meta.dirname
       }
     },
@@ -71,6 +77,10 @@ export default defineConfig(
   },
   {
     files: [ "**/*.md" ],
+    language: "@markdown/commonmark",
+    languageOptions: {
+      frontmatter: "yaml"
+    },
     rules: ESLINT_MARKDOWN_RULES
   },
   {

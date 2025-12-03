@@ -89,6 +89,6 @@
   },
   "sideEffects": false,
   "publishConfig": {
-    "directory": "dist"
+    "directory": "dist/main"
   }
 }
