@@ -57,6 +57,7 @@ export default defineConfig(
     processor: angular.processInlineTemplates,
     languageOptions: {
       parser: tseslint.parser,
+      globals: { ...globals.browser },
       parserOptions: {
         projectService: {
           allowDefaultProject: [
