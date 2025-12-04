@@ -13,7 +13,7 @@
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "configurations": {
             "default": {
-							"project": "./ng-package.json",
+              "project": "./ng-package.json",
               "tsConfig": "./tsconfig.json"
             }
           },
@@ -22,14 +22,14 @@
       }
     }
   },
-	"cli": {
-		"packageManager": "npm",
-		"warnings": {
-			"versionMismatch": true
-		},
-		"cache": {
-			"enabled": false
+  "cli": {
+    "packageManager": "npm",
+    "warnings": {
+      "versionMismatch": true
+    },
+    "cache": {
+      "enabled": false
     },
     "analytics": false
-	}
+  }
 }

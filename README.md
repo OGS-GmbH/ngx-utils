@@ -26,7 +26,8 @@ pnpm install -D @ogs-gmbh/ngx-utils
 </details>
 
 ## License
-The MIT License (MIT) - Please have a look at the [LICENSE file](./LICENSE) for more details.
+
+[//]: # (The MIT License &#40;MIT&#41; - Please have a look at the [LICENSE file]&#40;./LICENSE&#41; for more details.)
 
 ## Contributing
 Contributions are always welcome and greatly appreciated. Whether you want to report a bug, suggest a new feature, or improve the documentation, your input helps make the project better for everyone.

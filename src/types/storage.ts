@@ -1,6 +1,9 @@
 /**
  * Static storage helper methods
+ * @category Utilities
  *
+ * @since 1.0.0
+ * @author Simon Kovtyk
  */
 /* eslint-disable-next-line @tseslint/no-extraneous-class */
 export class StorageUtil {
