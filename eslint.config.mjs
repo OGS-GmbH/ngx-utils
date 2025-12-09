@@ -1,8 +1,8 @@
 import {
-  ANGULAR_TEMPLATE_RULES_PRESET,
   ESLINT_JSON_RULES,
   ESLINT_MARKDOWN_RULES,
   JS_RULES_PRESET,
+  ANGULAR_TEMPLATE_RULES_PRESET,
   getAngularTsPreset
 } from "@ogs-gmbh/linter";
 import eslintJson from "@eslint/json";
@@ -12,9 +12,9 @@ import stylisticJs from "@stylistic/eslint-plugin-js";
 import stylisticPlus from "@stylistic/eslint-plugin-plus";
 import stylisticTs from "@stylistic/eslint-plugin-ts";
 import tseslint from "typescript-eslint";
-import { defineConfig } from "eslint/config";
 import unicorn from "eslint-plugin-unicorn";
 import angular from "angular-eslint";
+import { defineConfig } from "eslint/config";
 
 export default defineConfig(
   {
@@ -26,8 +26,8 @@ export default defineConfig(
       "@stylistic/plus": stylisticPlus,
       "@markdown": eslintMarkdown,
       "@json": eslintJson,
-      "@angular": angular.tsPlugin,
-      "@angular-template": angular.templatePlugin
+      "@angular-template": angular.templatePlugin,
+      "@angular": angular.tsPlugin
     }
   },
   {
@@ -38,9 +38,19 @@ export default defineConfig(
       ".idea",
       "node_modules",
       "dist",
+      "CHANGELOG.md",
       "README.md",
-      "CHANGELOG.md"
+      ".vitepress/.vitepress/cache",
+      "docs"
     ]
+  },
+  {
+    files: [ "**/*.html" ],
+    rules: ANGULAR_TEMPLATE_RULES_PRESET,
+    languageOptions: {
+      globals: { ...globals.browser },
+      parser: angular.templateParser
+    }
   },
   {
     files: [ "**/*.ts" ],
@@ -49,20 +59,18 @@ export default defineConfig(
       parser: tseslint.parser,
       globals: { ...globals.browser },
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: [
+            ".vitepress/.vitepress/*",
+            ".vitepress/.vitepress/theme/*"
+          ]
+        },
         tsconfigRootDir: import.meta.dirname
       }
     },
     rules: getAngularTsPreset({
-      selectorPrefix: "app"
+      selectorPrefix: "ogs"
     })
-  },
-  {
-    files: [ "**/*.html" ],
-    languageOptions: {
-      parser: angular.templateParser
-    },
-    rules: ANGULAR_TEMPLATE_RULES_PRESET
   },
   {
     files: [ "**/*.js", "**/*.mjs", "**/*.cjs" ],
@@ -70,6 +78,10 @@ export default defineConfig(
   },
   {
     files: [ "**/*.md" ],
+    language: "@markdown/commonmark",
+    languageOptions: {
+      frontmatter: "yaml"
+    },
     rules: ESLINT_MARKDOWN_RULES
   },
   {
@@ -88,4 +100,3 @@ export default defineConfig(
     rules: ESLINT_JSON_RULES
   }
 );
-
