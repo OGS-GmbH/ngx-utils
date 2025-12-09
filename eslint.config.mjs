@@ -69,7 +69,7 @@ export default defineConfig(
       }
     },
     rules: getAngularTsPreset({
-      selectorPrefix: "ogs-http"
+      selectorPrefix: "ogs"
     })
   },
   {
