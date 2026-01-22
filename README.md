@@ -5,6 +5,15 @@
 
 This repository provides a lightweight collection of utility functions and helpers for Angular applications. Designed to simplify common tasks such as type checking, formatting, data manipulation, and reactive programming patterns, this library helps improve code readability, reusability, and maintainability across projects.
 
+## Getting Started
+
+> [!IMPORTANT]
+> We're offering an extensive API-Reference covered with in-depth usage examples of this project.
+
+To get a starting point, simply refer to our documentation at [ogs-gmbh.github.io/vitepress-plugin-sidebar](https://ogs-gmbh.github.io/vitepress-plugin-sidebar).
+
+
+
 ## Installation
 To get started, you can install this package using your preferred package manager.
 ````shell

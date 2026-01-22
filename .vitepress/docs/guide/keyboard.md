@@ -1,3 +1,8 @@
+---
+prev: false
+next: false
+---
+
 # Keyboard
 
 ## 1. Keyboard Configuration
