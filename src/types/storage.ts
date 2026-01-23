@@ -5,7 +5,10 @@
  * @since 1.0.0
  * @author Simon Kovtyk
  */
-/* eslint-disable-next-line @tseslint/no-extraneous-class */
+
+
+/** TODO: Take out of types as it is not a type */
+// eslint-disable-next-line @tseslint/no-extraneous-class
 export class StorageUtil {
   /**
    * Generate random UUID
