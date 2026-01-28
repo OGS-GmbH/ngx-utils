@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/OGS-GmbH/ngx-utils/compare/v1.3.0...v2.0.0) (2026-01-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to angular v21
+
+### Miscellaneous Chores
+
+* upgrade to angular v21 ([27eac8b](https://github.com/OGS-GmbH/ngx-utils/commit/27eac8b4004aa6dfb2120c962eee159885c8aecf))
+
 ## [1.3.0](https://github.com/OGS-GmbH/ngx-utils/compare/v1.2.0...v1.3.0) (2025-11-24)
 
 
