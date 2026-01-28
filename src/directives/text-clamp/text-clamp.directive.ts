@@ -1,8 +1,9 @@
 /* eslint-disable @tseslint/no-non-null-assertion */
 import { AfterViewInit, computed, Directive, ElementRef, inject, input, InputSignal, Renderer2, Signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
+/* eslint-disable-next-line @tseslint/no-shadow */
 import { animationFrameScheduler, debounceTime, filter, fromEvent, merge, Observable, throttleTime } from 'rxjs';
-import { CanvasMeasurerService } from './services/canvas-measurer-service.service';
+import { CanvasMeasurerService } from './canvas-measurer.service';
 
 /**
  * Rounds a number up only if its fractional part is at or above the given threshold.
@@ -63,15 +64,16 @@ function fits (
  * Takes Line height into account as well as preserving whole words.
  * Works with changing input in form of signals as well as static input.
  *
- * @example **Template (HTML)**
+ * @example
  * ```html
  * <p
  *   textClamp
  *   [text]="myText()"
- *   [ellipsis]="'… more'"></p>
+ *   [ellipsis]="'… more'"
+ * ></p>
  * ```
  *
- * @example **Component (TypeScript)**
+ * @example
  * ```ts
  * @Component({
  *   standalone: true,
@@ -86,12 +88,12 @@ function fits (
  *   }
  * }
  * ```
+ *
  * @since 1.2.0
  * @author Ian Wenneckers
  */
-
 @Directive({
-  selector: '[textClamp]',
+  selector: '[ogsTextClamp]',
   standalone: true
 })
 export class TextClampDirective implements AfterViewInit {
@@ -114,7 +116,7 @@ export class TextClampDirective implements AfterViewInit {
    * @remarks
    * This property is required. Accepts a string or `undefined`.
    */
-  public text: InputSignal<string | undefined> = input.required();
+  public readonly text: InputSignal<string | undefined> = input.required();
 
   /**
    * The string used as an ellipsis.
@@ -123,14 +125,14 @@ export class TextClampDirective implements AfterViewInit {
    * This value can be customized to control how truncated text is indicated.
    * @defaultValue "..."
    */
-  public ellipsis: InputSignal<string> = input("...");
+  public readonly ellipsis: InputSignal<string> = input("...");
 
   private _textChange$: Observable<string | undefined> = toObservable(this.text);
 
   private _canvasMeasureService: CanvasMeasurerService = inject(CanvasMeasurerService);
 
   // eslint-disable-next-line @unicorn/consistent-function-scoping
-  private _words: Signal<string[]> = computed(() => {
+  private readonly _words: Signal<string[]> = computed(() => {
     let words: string[] = [];
 
     if (this.text())
@@ -173,6 +175,8 @@ export class TextClampDirective implements AfterViewInit {
 
   /**
    * Schedules the ellipsis calculation by waiting for the font to be fully loaded so it can be measured correctly
+   *
+   * @returns Promise that resolves when the ellipsis has been scheduled
    */
   private async scheduleEllipsis (): Promise<void> {
     await document.fonts.ready;
@@ -200,7 +204,7 @@ export class TextClampDirective implements AfterViewInit {
    *
    * @returns clamped text or undefined if measurement went wrong
    */
-  getClampedText (): string | undefined {
+  public getClampedText (): string | undefined {
     if (this._nativeElement && this.text()) {
       if (!this._isTextInitialized)
         this._isTextInitialized = true;
@@ -232,7 +236,6 @@ export class TextClampDirective implements AfterViewInit {
             clampText += word;
             remainingLineWidth -= wordWidth;
             usedWordsCount++;
-            // eslint-disable-next-line @stylistic/ts/brace-style
           }
           // Check if there is a next line
           else if (linePointer < lineCount) {
@@ -249,7 +252,6 @@ export class TextClampDirective implements AfterViewInit {
           } else
             break;
         }
-
 
         if (usedWordsCount > 0 && usedWordsCount < this._words().length)
           clampText += this.ellipsis();

@@ -12,7 +12,7 @@
 export class StorageUtil {
   /**
    * Generate random UUID
-   * @return {string} - Random UUID
+   * @returns Random UUID
    */
   public static generateRandomUUID (): string {
     return crypto.randomUUID();

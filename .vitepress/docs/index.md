@@ -3,8 +3,8 @@ layout: home
 isHome: true
 
 hero:
-  text: Angular utilities
-  tagline: Supports Angular, TypeScript and everything for your next enterprise project.
+  text: Shedding Light on Ambiguous Code
+  tagline: Reusable Angular helpers that illuminate ambiguous code and make development predictable.
   actions:
     - theme: brand
       text: Get started
@@ -17,16 +17,16 @@ hero:
       link: https://github.com/OGS-GmbH/ngx-utils
 
 features:
-    - icon: <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M320-242 80-482l242-242 43 43-199 199 197 197-43 43Zm318 2-43-43 199-199-197-197 43-43 240 240-242 242Z"/></svg>
-      title: Wide utility coverage
-      details: Helpers for Angular, TypeScript, RxJS, formatting, and more.
-    - icon: <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M705-128 447-388q-23 8-46 13t-47 5q-97.08 0-165.04-67.67Q121-505.33 121-602q0-31 8.16-60.39T152-718l145 145 92-86-149-149q25.91-15.16 54.96-23.58Q324-840 354-840q99.17 0 168.58 69.42Q592-701.17 592-602q0 24-5 47t-13 46l259 258q11 10.96 11 26.48T833-198l-76 70q-10.7 11-25.85 11Q716-117 705-128Zm28-57 40-40-273-273q16-21 24-49.5t8-54.5q0-75-55.5-127T350-782l102 104q9 9 8.5 21.5T451-635L318-510q-9.27 8-21.64 8-12.36 0-20.36-8l-98-97q3 77 54.67 127T354-430q25 0 53-8t49-24l277 277ZM476-484Z"/></svg>
-      title: Easy to integrate
-      details: Drop-in functions and ready-to-use helpers with zero setup.
-    - icon: <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M120-120v-60h720v60H120Zm0-165v-60h480v60H120Zm0-165v-60h720v60H120Zm0-165v-60h480v60H120Zm0-165v-60h720v60H120Z"/></svg>
-      title: Clean & concise code
-      details: Shortcuts for formatting, data handling, and common operations.
-    - icon: <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M604-120v-125H450v-410h-93v130H80v-315h277v125h247v-125h276v315H604v-130h-94v350h94v-130h276v315H604ZM140-780v195-195Zm524 405v195-195Zm0-405v195-195Zm0 195h156v-195H664v195Zm0 405h156v-195H664v195ZM140-585h157v-195H140v195Z"/></svg>
-      title: Consistent patterns
-      details: Unified utility conventions you can reuse across projects.
+  - icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="m15 15 6 6M15 9l6-6M21 16v5h-5M21 8V3h-5M3 16v5h5M3 21l6-6M3 8V3h5M9 9 3 3"/></svg>
+    title: Wide utility coverage
+    details: Helpers for Angular, TypeScript, RxJS, formatting, and more.
+  - icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2"/><rect width="8" height="8" x="14" y="2" rx="1"/></svg>
+    title: Easy to integrate
+    details: Drop-in functions and ready-to-use helpers with zero setup.
+  - icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M7 15.09a1.5 1.5 0 0 1 2 1.41"/><circle cx="18.5" cy="8.5" r="3.5"/><circle cx="7.5" cy="16.5" r="5.5"/><circle cx="7.5" cy="4.5" r="2.5"/></svg>
+    title: Clean & concise code
+    details: Shortcuts for formatting, data handling, and common operations.
+  - icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="m6 16 6-12 6 12M8 12h8M16 20l2 2 4-4"/></svg>
+    title: Consistent patterns
+    details: Unified utility conventions you can reuse across projects.
 --- 
