@@ -5,6 +5,7 @@ import { fromEvent, throttleTime } from 'rxjs';
 /**
  * Throttles click events on an HTML element.
  *
+ * @category Directives
  * @remarks
  * Prevents rapid repeated clicks by allowing only one `(throttleClick)` event
  * to fire within the configured interval. Works with any clickable element.
@@ -31,9 +32,11 @@ import { fromEvent, throttleTime } from 'rxjs';
  *   }
  * }
  * ```
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
 @Directive({
-  selector: '[throttleClick]',
+  selector: '[ogsThrottleClick]',
   standalone: true
 })
 export class ThrottleClickDirective {
@@ -41,19 +44,34 @@ export class ThrottleClickDirective {
 
   /**
    * Whether the first click is emitted - default is true
+   * @remarks
+   * @defaultValue true
    */
-  public leading: InputSignal<boolean> = input(true);
+  public readonly leading: InputSignal<boolean> = input(true);
 
   /**
    * Whether the last click is emitted - default is true
+   * @remarks
+   * @defaultValue true
    */
-  public trailing: InputSignal<boolean> = input(true);
+  public readonly trailing: InputSignal<boolean> = input(true);
 
-  public throttleTimeMs: InputSignal<number> = input(800);
+  /**
+   * Duration of the throttle period in milliseconds.
+   * @remarks
+   * This value configures the timing used by the directive's throttling mechanism
+   * @defaultValue 800
+   */
+  public readonly throttleTimeMs: InputSignal<number> = input(800);
 
   @Output() public readonly throttleClick: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
 
   constructor () {
+    /**
+     * TODO: throttleTimeMs is set in the consturctor which runs only once when the directive is instantiated. At that point, the input binding hasn't been set yet, so it gets the default value (800)
+     * Solution =>  set up the RxJS pipeline in a lifecycle hook or use an effect
+     *
+     */
     fromEvent<MouseEvent>(this._element.nativeElement, "click")
       .pipe(
         throttleTime(this.throttleTimeMs(), undefined, {

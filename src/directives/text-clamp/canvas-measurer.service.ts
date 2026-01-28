@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
  * Builds a CSS font shorthand string from a computed style declaration.
  *
  * @param elementStyle - The computed CSS style of an element, containing font properties.
- * @param options.isFontKey - If true, includes letter-spacing in the resulting string for use as a cache key.
+ * @param options - If `ìsFontKey` true, includes letter-spacing in the resulting string for use as a cache key.
  * @returns A font shorthand string suitable for CanvasRenderingContext2D.font or as a unique font key.
  */
 function getFontString (elementStyle: CSSStyleDeclaration, options: { isFontKey: boolean; } | undefined = undefined): string {
@@ -41,8 +41,8 @@ export class CanvasMeasurerService {
    * Measures text width for a given element style and string,
    * caching results per font configuration.
    *
-   * @param style - Computed CSS style of the element (font info).
-   * @param text - The string to measure.
+   * @param elementStyle - Computed CSS style of the element (font info).
+   * @param stringToMeasure - The string to measure.
    * @returns The width in pixels, or undefined if measurement failed.
    */
   public getRenderedStringWidth (elementStyle: CSSStyleDeclaration | undefined, stringToMeasure: string): number | undefined {

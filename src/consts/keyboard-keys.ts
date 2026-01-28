@@ -1,3 +1,10 @@
+/**
+ * KeyboardKeys is a collection of constant string values representing commonly used keyboard characters. It includes symbols (such as colon, hash, and space), digits, and both uppercase and lowercase letters, providing a reliable source of normalized key identifiers across the application.
+ * @readonly
+ * @category Keyboard
+ * @since 1.0.0
+ * @author Simon Kovtyk
+ */
 export namespace KeyboardKeys {
   export const BACKSPACE: string = "Backspace";
   export const ENTER: string = "Enter";
@@ -72,6 +79,13 @@ export namespace KeyboardKeys {
   export const UPPER_Y: string = "Y";
   export const UPPER_Z: string = "Z";
 }
+/**
+ * KeyboardKeyArrays provides grouped collections of keyboard characters, including arrays for digits, all letters, lowercase letters, and uppercase letters. These arrays offer a convenient way to work with character sets in validation, parsing, and input processing.
+ * @category Keyboard
+ * @readonly
+ * @since 1.0.0
+ * @author Simon Kovtyk
+ */
 export namespace KeyboardKeyArrays {
   export const DIGITS: string[] = [ KeyboardKeys.DIGIT_0,
     KeyboardKeys.DIGIT_1,

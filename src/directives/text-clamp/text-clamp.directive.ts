@@ -1,15 +1,20 @@
 /* eslint-disable @tseslint/no-non-null-assertion */
 import { AfterViewInit, computed, Directive, ElementRef, inject, input, InputSignal, Renderer2, Signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
+/* eslint-disable-next-line @tseslint/no-shadow */
 import { animationFrameScheduler, debounceTime, filter, fromEvent, merge, Observable, throttleTime } from 'rxjs';
-import { CanvasMeasurerService } from './services/canvas-measurer-service.service';
+import { CanvasMeasurerService } from './canvas-measurer.service';
 
 /**
  * Rounds a number up only if its fractional part is at or above the given threshold.
  *
+ * @function
  * @param value - The value to round.
  * @param threshold - The fractional cutoff (0–1) above which to round up.
  * @returns The rounded integer.
+ *
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
 function roundWithThreshold (value: number, threshold: number): number {
   const integerPart: number = Math.floor(value);
@@ -24,12 +29,16 @@ function roundWithThreshold (value: number, threshold: number): number {
  * Determines whether a word of a given width fits into the remaining line width,
  * taking into account the ellipsis width on the last line.
  *
+ * @function
  * @param wordWidth - Pixel width of the current word.
  * @param remainingWidth - Remaining pixel width in the current line.
  * @param currentLine - 1-based index of the current line.
  * @param maxLines - Total number of allowed lines.
  * @param ellipsisWidth - Pixel width of the ellipsis string.
  * @returns True if the word can fit, false otherwise.
+ *
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
 // eslint-disable-next-line @tseslint/max-params
 function fits (
@@ -49,20 +58,22 @@ function fits (
 /**
  * Clamps text to its available space and appends a custom ellipsis.
  *
+ * @category Directives
  * @remarks
  * Limits content automatically to the available size of the parent container.
  * Takes Line height into account as well as preserving whole words.
  * Works with changing input in form of signals as well as static input.
  *
- * @example **Template (HTML)**
+ * @example
  * ```html
  * <p
  *   textClamp
  *   [text]="myText()"
- *   [ellipsis]="'… more'"></p>
+ *   [ellipsis]="'… more'"
+ * ></p>
  * ```
  *
- * @example **Component (TypeScript)**
+ * @example
  * ```ts
  * @Component({
  *   standalone: true,
@@ -77,10 +88,12 @@ function fits (
  *   }
  * }
  * ```
+ *
+ * @since 1.2.0
+ * @author Ian Wenneckers
  */
-
 @Directive({
-  selector: '[textClamp]',
+  selector: '[ogsTextClamp]',
   standalone: true
 })
 export class TextClampDirective implements AfterViewInit {
@@ -94,20 +107,32 @@ export class TextClampDirective implements AfterViewInit {
     if (this._htmlElement?.nativeElement)
       return this._htmlElement.nativeElement;
 
-
     return undefined;
   }
 
-  public text: InputSignal<string | undefined> = input.required();
+  /**
+   * The text value for this input.
+   *
+   * @remarks
+   * This property is required. Accepts a string or `undefined`.
+   */
+  public readonly text: InputSignal<string | undefined> = input.required();
 
-  public ellipsis: InputSignal<string> = input("...");
+  /**
+   * The string used as an ellipsis.
+   *
+   * @remarks
+   * This value can be customized to control how truncated text is indicated.
+   * @defaultValue "..."
+   */
+  public readonly ellipsis: InputSignal<string> = input("...");
 
   private _textChange$: Observable<string | undefined> = toObservable(this.text);
 
   private _canvasMeasureService: CanvasMeasurerService = inject(CanvasMeasurerService);
 
   // eslint-disable-next-line @unicorn/consistent-function-scoping
-  private _words: Signal<string[]> = computed(() => {
+  private readonly _words: Signal<string[]> = computed(() => {
     let words: string[] = [];
 
     if (this.text())
@@ -150,6 +175,8 @@ export class TextClampDirective implements AfterViewInit {
 
   /**
    * Schedules the ellipsis calculation by waiting for the font to be fully loaded so it can be measured correctly
+   *
+   * @returns Promise that resolves when the ellipsis has been scheduled
    */
   private async scheduleEllipsis (): Promise<void> {
     await document.fonts.ready;
@@ -177,7 +204,7 @@ export class TextClampDirective implements AfterViewInit {
    *
    * @returns clamped text or undefined if measurement went wrong
    */
-  getClampedText (): string | undefined {
+  public getClampedText (): string | undefined {
     if (this._nativeElement && this.text()) {
       if (!this._isTextInitialized)
         this._isTextInitialized = true;
@@ -209,7 +236,6 @@ export class TextClampDirective implements AfterViewInit {
             clampText += word;
             remainingLineWidth -= wordWidth;
             usedWordsCount++;
-            // eslint-disable-next-line @stylistic/ts/brace-style
           }
           // Check if there is a next line
           else if (linePointer < lineCount) {
@@ -226,7 +252,6 @@ export class TextClampDirective implements AfterViewInit {
           } else
             break;
         }
-
 
         if (usedWordsCount > 0 && usedWordsCount < this._words().length)
           clampText += this.ellipsis();
