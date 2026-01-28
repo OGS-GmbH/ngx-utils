@@ -1,5 +1,9 @@
 {
+  "include": [
+    "./src/**/*.ts"
+  ],
 	"compilerOptions": {
+		"inlineSources": false,
 		"alwaysStrict": true,
 		"strict": true,
 		"strictNullChecks": true,
@@ -15,19 +19,21 @@
 		"noImplicitThis": true,
 		"noPropertyAccessFromIndexSignature": true,
 		"noUncheckedIndexedAccess": true,
-		"moduleResolution": "bundler",
-		"module": "ES2022",
-		"importHelpers": true,
-		"noEmitHelpers": false,
-		"declaration": true,
-		"disableSizeLimit": false,
-		"esModuleInterop": true,
+
+    "skipLibCheck": true,
 		"isolatedModules": true,
 		"experimentalDecorators": true,
+		"importHelpers": true,
+		"moduleResolution": "bundler",
+    "module": "preserve",
 		"target": "ES2022",
-		"skipLibCheck": true,
-    "sourceMap": true,
-		"declarationMap": true
+    "declaration": true,
+    "declarationMap": true,
+		"lib": [
+			"ES2022",
+			"dom",
+      "dom.iterable"
+		]
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,
