@@ -7,7 +7,7 @@ import { Validators, AbstractControl } from "@angular/forms";
  * @see https://v21.angular.dev/guide/forms/form-validation
  * @since 2.1.0
  * @author Ian Wenneckers
-	* @category Namespaces
+ * @category Form
  */
 export namespace FormFieldError {
   /**
