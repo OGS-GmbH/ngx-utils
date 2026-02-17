@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/OGS-GmbH/ngx-utils/compare/v2.0.0...v2.1.0) (2026-02-17)
+
+
+### Features
+
+* add form-field-error ([#15](https://github.com/OGS-GmbH/ngx-utils/issues/15)) ([7440cc5](https://github.com/OGS-GmbH/ngx-utils/commit/7440cc584fe56aa69824ed9be474695b169af397))
+
 ## [2.0.0](https://github.com/OGS-GmbH/ngx-utils/compare/v1.3.0...v2.0.0) (2026-01-28)
 
 
